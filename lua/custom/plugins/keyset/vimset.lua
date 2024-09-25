@@ -2,7 +2,16 @@ return {
   -- Wq로도 파일 저장 가능
   vim.api.nvim_create_user_command('Wq', 'wq', {}),
 
-  -- Go 들여쓰기 4칸으로 조절
+  -- Python
+  vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'python',
+    callback = function()
+      vim.opt_local.colorcolumn = '80' -- Python에서는 80열을 넘어가면 줄 표시
+      vim.cmd [[ highlight ColorColumn ctermbg=0 guibg=lightgrey ]] -- 색상 변경
+    end,
+  }),
+
+  -- Go
   vim.api.nvim_create_autocmd('FileType', {
     pattern = 'go',
     callback = function()

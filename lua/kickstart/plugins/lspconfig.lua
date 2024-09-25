@@ -136,6 +136,7 @@ return {
         gopls = {},
         pyright = {},
         robotframework_ls = {},
+        -- robotframework_ls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
